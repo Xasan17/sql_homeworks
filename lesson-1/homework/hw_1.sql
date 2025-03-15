@@ -88,3 +88,10 @@ BACKUP DATABASE SchoolDB
 TO DISK = 'D:\Дата аналитика\HW\SchoolDB.bak'  
 WITH FORMAT, INIT,  
 NAME = 'Full Backup of SchoolDB';
+
+
+RESTORE DATABASE SchoolDB
+FROM DISK = 'D:\Дата аналитика\HW\SchoolDB.bak'
+WITH REPLACE,
+MOVE 'SchoolDB' TO 'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\SchoolDB.mdf',
+MOVE 'SchoolDB_log' TO 'C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\SchoolDB_log.ldf';
